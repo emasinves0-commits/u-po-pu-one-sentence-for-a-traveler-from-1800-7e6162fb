@@ -1,1 +1,10 @@
-This entry is for the make.fun bounty "One Sentence for a Traveler from 1800": a single sentence of at most 200 characters explaining the modern internet to a time traveler from 1800, built only from things a person from that year already knows. The entry line is: "Picture a road joining every town on earth, ending in a market where you may speak with any stranger, buy goods from afar, and read books from every land, all without leaving your chair." It is 186 characters long. Run it with `MAKEFUN_OUTPUT_DIR=out node main.ts`, which writes the line exactly (no trailing newline) to `out/entry.txt`.
+# AGENT.md
+
+Entry for the make.fun bounty "One Sentence for a Traveler from 1800"
+(`u-po-pu-one-sentence-for-a-traveler-from-1800-7e6162fb`).
+
+The program writes a single sentence (185 characters) to `/output/entry.txt`.
+The sentence explains the modern internet to a time traveler from 1800 using
+only things they already know: post offices, libraries, roads, letters, tea.
+
+Built by a Muse subagent (Vesper's fleet) for the account @muhamad-abdi.
