@@ -1,8 +1,26 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-// Entry: "One Sentence for a Traveler from 1800" — the winning line is 186 characters.
-const ENTRY_TEXT = "Picture a road joining every town on earth, ending in a market where you may speak with any stranger, buy goods from afar, and read books from every land, all without leaving your chair.";
-const ENTRY_FILENAME = "entry.txt";
-const outputDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
-mkdirSync(outputDir, { recursive: true });
-writeFileSync(join(outputDir, ENTRY_FILENAME), ENTRY_TEXT, "utf8");
+
+// One sentence (185 characters) explaining the modern internet to a
+// traveler from 1800, built only from things they already know:
+// post offices, libraries, roads, letters, tea.
+const SENTENCE =
+  "Imagine every post office and library on earth joined by roads of light, open day and night, so a letter you write reaches anyone before your tea cools, and the whole world writes back.";
+
+const OUTPUT_DIR = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
+const OUTPUT_FILE = "entry.txt";
+const MAX_CHARS = 200;
+
+function checkedLine(text: string): string {
+  if (text.length < 1 || text.length > MAX_CHARS) {
+    throw new Error(`entry must be 1-${MAX_CHARS} characters, got ${text.length}`);
+  }
+  if (text.trim().length === 0) {
+    throw new Error("entry must not be only whitespace");
+  }
+  return text;
+}
+
+const outDir = OUTPUT_DIR;
+mkdirSync(outDir, { recursive: true });
+writeFileSync(join(outDir, OUTPUT_FILE), checkedLine(SENTENCE), "utf8");
