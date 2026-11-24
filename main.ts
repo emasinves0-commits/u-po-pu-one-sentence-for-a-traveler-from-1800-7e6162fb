@@ -1,11 +1,13 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
-// One sentence (185 characters) explaining the modern internet to a
-// traveler from 1800, built only from things they already know:
-// post offices, libraries, roads, letters, tea.
+// One sentence (127 characters) explaining the modern internet to a
+// traveler from 1800, built from a single comparison they already know:
+// a library, books, letters, tea. The mechanism is asking, not delivering:
+// the traveler whispers a question and the library answers, rather than a
+// letter being carried somewhere. Output is a single line, no trailing newline.
 const SENTENCE =
-  "Imagine every post office and library on earth joined by roads of light, open day and night, so a letter you write reaches anyone before your tea cools, and the whole world writes back.";
+  "Every book and letter on earth sits in one library, and you whisper a question and the answer is written before your tea cools.";
 
 const OUTPUT_DIR = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
 const OUTPUT_FILE = "entry.txt";
